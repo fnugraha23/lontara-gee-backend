@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: lontara-backend
+    runtime: python
+    plan: free # Menggunakan paket gratis agar hemat biaya portofolio
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app # Menggunakan gunicorn untuk server produksi
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: EE_PROJECT_ID
+        sync: false # Nilai diatur di Dashboard Render demi keamanan
+      - key: EE_SERVICE_ACCOUNT
+        sync: false
+      - key: EE_PRIVATE_KEY
+        sync: false
+      - key: FLASK_ENV
+        value: production

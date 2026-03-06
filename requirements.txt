@@ -1,0 +1,14 @@
+# --- Core Framework ---
+Flask==3.0.2
+Flask-Cors==4.0.0
+
+# --- GEE Stack ---
+earthengine-api
+google-auth
+
+# --- Utilities ---
+python-dotenv==1.0.1
+requests==2.31.0
+
+# --- Production Server ---
+gunicorn
